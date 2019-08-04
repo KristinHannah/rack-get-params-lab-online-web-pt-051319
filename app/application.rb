@@ -24,6 +24,9 @@ class Application
         resp.write "#{cart_item}\n"
       end 
     end 
+    #mine
+    elsif req.path.match(/add/)
+      
     else
       resp.write "Path Not Found"
     end
@@ -31,6 +34,7 @@ class Application
     resp.finish
   end
   
+  def add_search(search_item)
     
   def handle_search(search_term)
     if @@items.include?(search_term)
