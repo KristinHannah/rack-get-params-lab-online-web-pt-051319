@@ -27,7 +27,7 @@ class Application
     #mine
     elsif req.path.match(/add/)
       search_term = req.params["q"]
-      
+      resp.write add_search(search_term)
     else
       resp.write "Path Not Found"
     end
@@ -35,7 +35,7 @@ class Application
     resp.finish
   end
   
-  def add_search(search_item)
+  def add_search(search_term)
    if @@items.include?(search_term)
      @@cart << search_term 
      resp.write "added #{search_term}"
